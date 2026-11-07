@@ -1,0 +1,10 @@
+{
+  "description": "A responsive e-commerce homepage featuring an interactive product carousel with add-to-cart functionality and customizable product recommendations for enhanced user experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

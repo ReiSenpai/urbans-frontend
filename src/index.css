@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+
+@theme inline {
+  --color-background: #0c0c0e;
+  --color-foreground: #f0f0f2;
+  --color-card: #16161a;
+  --color-card-foreground: #f0f0f2;
+  --color-primary: #e0f72f;
+  --color-primary-foreground: #0c0c0e;
+  --color-secondary: #1e1e24;
+  --color-secondary-foreground: #a0a0b0;
+  --color-muted: #1a1a20;
+  --color-muted-foreground: #6b6b80;
+  --color-accent: #e0f72f;
+  --color-accent-foreground: #0c0c0e;
+  --color-border: rgba(255,255,255,0.08);
+  --color-ring: #e0f72f;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0c0c0e;
+  color: #f0f0f2;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbars by default, show on hover/scroll */
+.carousel-scroll::-webkit-scrollbar {
+  height: 3px;
+}
+.carousel-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.carousel-scroll::-webkit-scrollbar-thumb {
+  background: rgba(224,247,47,0.3);
+  border-radius: 99px;
+}
+
+/* Skeleton pulse animation */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+.skeleton {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #1e1e24 25%, #26262e 50%, #1e1e24 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.skeleton-shimmer {
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+  background: linear-gradient(90deg, #1a1a20 25%, #2a2a32 50%, #1a1a20 75%);
+  background-size: 200% 100%;
+}
+
+/* Card fade-out transition */
+@keyframes card-dismiss {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.85); max-width: 0; margin: 0; padding: 0; }
+}
+.card-dismissed {
+  animation: card-dismiss 0.35s ease forwards;
+}
+
+/* Smooth card reveal */
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card-reveal {
+  animation: card-reveal 0.4s ease forwards;
+}
+
+/* Hero gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #e0f72f 0%, #a8e020 50%, #78cc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon glow on primary button */
+.btn-primary-glow:hover {
+  box-shadow: 0 0 20px rgba(224, 247, 47, 0.4);
+}
+
+/*si quieres que las páginas aparezcan suavemente al cambiar de ruta:*/
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
